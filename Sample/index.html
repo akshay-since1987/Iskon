@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ISKCON Dhule - Official Website</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Outfit:wght@700&display=swap" rel="stylesheet">
+    <style>
+        /* Specific page styles for index.html */
+        .hero {
+            height: 90vh;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('assets/iskcon_hero_bg.png');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+        }
+
+        .hero-content p {
+            font-size: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            background: var(--glass);
+            padding: 10px 20px;
+            border-radius: 50px;
+            margin-bottom: 20px;
+            color: var(--text-dark);
+        }
+
+        .status-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 10px;
+            background-color: #2ecc71;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .info-card {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            background: white;
+            transition: var(--transition);
+        }
+
+        .info-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .info-card-img {
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .info-card-content {
+            padding: 25px;
+        }
+
+        .info-card h3 {
+            color: var(--primary-purple);
+            margin-bottom: 15px;
+        }
+
+        footer {
+            background-color: #1a1a1a;
+            color: white;
+            padding: 60px 0;
+            margin-top: 50px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+        }
+
+        .footer-col h4 {
+            color: var(--primary-gold);
+            margin-bottom: 25px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 12px;
+            color: #ccc;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="nav-header hero-nav">
+        <div class="logo-container">
+            <img src="assets/white.png" alt="ISKCON Dhule Logo" class="logo-white">
+            <img src="assets/black.png" alt="ISKCON Dhule Logo" class="logo-black">
+            <div>
+                ISKCON Dhule<br>
+                <small>Society for Krishna Consciousness</small>
+            </div>
+        </div>
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="temple-timings.html">Temple</a>
+            <a href="courses.html">Courses</a>
+            <a href="programs.html">Programs</a>
+            <a href="media-gallery.html">Media</a>
+        </nav>
+        <div class="header-actions">
+            <button class="btn btn-gold login-trigger">Login</button>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <div class="status-badge">
+                    <span class="status-dot"></span>
+                    <span class="status-text">Checking Status...</span>
+                </div>
+                <h1>ISKCON Dhule</h1>
+                <p>Welcome to the spiritual oasis in the heart of Dhule. Experience divine peace, ancient wisdom, and blissful bhakti at ISKCON Dhule.</p>
+                <div class="hero-btns">
+                    <a href="temple-timings.html" class="btn btn-primary">Darshan Timings</a>
+                    <a href="courses.html" class="btn btn-gold">View Courses</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="events-section">
+            <div class="container">
+                <h2 class="section-title">Events & Festivals</h2>
+                <p>Upcoming events and celebrations in the temple</p>
+                
+                <div class="events-container">
+                    <button class="scroll-btn btn-prev">❮</button>
+                    <div class="events-wrapper">
+                        <div class="events-slider">
+                            <div class="event-card">
+                                <img src="assets/iskcon_event_ekadasi.png" alt="Papamochani Ekadasi" class="event-image-img">
+                                <div class="event-content">
+                                    <h3>Papamochani Ekadasi</h3>
+                                    <p>Whoever reads or hears about Papamochani ekadashi obtains the very same merit he would get if he donated a thousand cows in charity...</p>
+                                    <div class="event-footer">
+                                        <div class="event-date">
+                                            <span>📅</span> 15 Mar 2026
+                                        </div>
+                                        <a href="#" class="know-more">Know more</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="event-card">
+                                <img src="assets/iskcon_event_ram_navami.png" alt="Sri Rama Navami" class="event-image-img">
+                                <div class="event-content">
+                                    <h3>Sri Rama Navami</h3>
+                                    <p>Celebrate the appearance of Lord Ramachandra, the personification of righteousness. Join us for grand abhishek and theatrical performances.</p>
+                                    <div class="event-footer">
+                                        <div class="event-date">
+                                            <span>📅</span> 26 Mar 2026
+                                        </div>
+                                        <a href="#" class="know-more">Know more</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="event-card">
+                                <img src="assets/iskcon_event_chandan_yatra.png" alt="Chandan Yatra" class="event-image-img">
+                                <div class="event-content">
+                                    <h3>Chandan Yatra</h3>
+                                    <p>The cooling festival where deities are smeared with sandalwood paste. Experience the blissful sight of the Lord in His fragrant attire.</p>
+                                    <div class="event-footer">
+                                        <div class="event-date">
+                                            <span>📅</span> 12 Apr 2026
+                                        </div>
+                                        <a href="#" class="know-more">Know more</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- More event cards can be added here -->
+                        </div>
+                    </div>
+                    <button class="scroll-btn btn-next">❯</button>
+                </div>
+                
+                <a href="#" class="btn btn-primary" style="background-color: var(--primary-purple); border: none; margin-top: 20px;">See All Events</a>
+            </div>
+        </section>
+
+        <section class="container">
+            <h2 class="section-title">Our Spiritual Courses</h2>
+            <div class="courses-container">
+                <button class="scroll-btn btn-prev">❮</button>
+                <div class="courses-wrapper">
+                    <div class="courses-slider">
+                        <div class="course-card-carousel">
+                            <img src="assets/course_discover_yourself_1773167670077.png" alt="Discover Yourself">
+                            <div class="info-card-content">
+                                <span class="course-type" style="color: var(--primary-purple); font-weight: 700; font-size: 0.8rem; text-transform: uppercase;">General</span>
+                                <h3>Discover Yourself</h3>
+                                <p>A logic-based approach to understanding the science of the soul and the laws of nature.</p>
+                                <a href="courses.html" class="btn-text">Learn More &rarr;</a>
+                            </div>
+                        </div>
+                        <div class="course-card-carousel">
+                            <img src="assets/course_bhakti_shastri_1773167695233.png" alt="Bhakti Shastri">
+                            <div class="info-card-content">
+                                <span class="course-type" style="color: var(--primary-purple); font-weight: 700; font-size: 0.8rem; text-transform: uppercase;">Intermediate</span>
+                                <h3>Bhakti Shastri</h3>
+                                <p>Systematic study of Bhagavad-gita, Nectar of Devotion, Upadesamrta, and Isopanisad.</p>
+                                <a href="courses.html" class="btn-text">Learn More &rarr;</a>
+                            </div>
+                        </div>
+                        <div class="course-card-carousel">
+                            <img src="assets/course_bhakti_pravesh_1773167650938.png" alt="Bhakti Pravesh">
+                            <div class="info-card-content">
+                                <span class="course-type" style="color: var(--primary-purple); font-weight: 700; font-size: 0.8rem; text-transform: uppercase;">Beginner</span>
+                                <h3>Bhakti Pravesh</h3>
+                                <p>A comprehensive introduction to the fundamental practices and philosophy of Krishna Consciousness.</p>
+                                <a href="courses.html" class="btn-text">Learn More &rarr;</a>
+                            </div>
+                        </div>
+                        <div class="course-card-carousel">
+                            <img src="assets/course_disciple_1773167608986.png" alt="Disciple Course">
+                            <div class="info-card-content">
+                                <span class="course-type" style="color: var(--primary-purple); font-weight: 700; font-size: 0.8rem; text-transform: uppercase;">Foundational</span>
+                                <h3>ISKCON Disciple Course</h3>
+                                <p>Essential guidance for those seeking shelter and initiation within the Guru-parampara system.</p>
+                                <a href="courses.html" class="btn-text">Learn More &rarr;</a>
+                            </div>
+                        </div>
+                        <div class="course-card-carousel">
+                            <img src="assets/course_etiquette_1773167633506.png" alt="Vaishnava Etiquette">
+                            <div class="info-card-content">
+                                <span class="course-type" style="color: var(--primary-purple); font-weight: 700; font-size: 0.8rem; text-transform: uppercase;">Culture</span>
+                                <h3>Vaishnava Etiquette</h3>
+                                <p>Learning the art of devotional behavior and respectful interactions in the community.</p>
+                                <a href="courses.html" class="btn-text">Learn More &rarr;</a>
+                            </div>
+                        </div>
+                        <div class="course-card-carousel">
+                            <img src="assets/course_bhakti_shastri_1773167695233.png" alt="Bhakti Vaibhav">
+                            <div class="info-card-content">
+                                <span class="course-type" style="color: var(--primary-purple); font-weight: 700; font-size: 0.8rem; text-transform: uppercase;">Advanced</span>
+                                <h3>Bhakti Vaibhav Course</h3>
+                                <p>Deep-dive study focused on the systematic analysis of the Srimad-Bhagavatam.</p>
+                                <a href="courses.html" class="btn-text">Learn More &rarr;</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="scroll-btn btn-next">❯</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>About Us</h4>
+                    <p>ISKCON Dhule is a center for spiritual learning and devotion, bringing the message of pure love for God through Vedic wisdom and selfless service to the community.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="temple-timings.html">Timings</a></li>
+                        <li><a href="programs.html">Programs</a></li>
+                        <li><a href="media-gallery.html">Media</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li>Hare Krishna Land, Dhule</li>
+                        <li>Phone: +91 8483971203</li>
+                        <li>Email: info@iskcondhule.com</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Stay Connected</h4>
+                    <div class="social-links">
+                        <span>Facebook</span> | <span>Instagram</span> | <span>YouTube</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>

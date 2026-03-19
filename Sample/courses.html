@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Educational Courses - ISKCON Dhule</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Outfit:wght@700&display=swap" rel="stylesheet">
+    <style>
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+            margin: 60px 0;
+        }
+
+        .course-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 1px solid #f0f0f0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .course-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+
+        .course-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .course-card-content {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .course-card h3 {
+            color: var(--primary-purple);
+            margin-bottom: 12px;
+            font-size: 1.25rem;
+        }
+
+        .course-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .course-type {
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--primary-gold);
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .course-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+        }
+
+        .enroll-btn {
+            color: var(--primary-purple);
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="nav-header">
+        <div class="logo-container">
+            <img src="assets/white.png" alt="ISKCON Dhule Logo" class="logo-white">
+            <img src="assets/black.png" alt="ISKCON Dhule Logo" class="logo-black">
+            <div>
+                ISKCON Dhule<br>
+                <small>Society for Krishna Consciousness</small>
+            </div>
+        </div>
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="temple-timings.html">Temple</a>
+            <a href="courses.html" class="active">Courses</a>
+            <a href="programs.html">Programs</a>
+            <a href="media-gallery.html">Media</a>
+        </nav>
+        <div class="header-actions">
+            <button class="btn btn-gold login-trigger">Login</button>
+        </div>
+    </header>
+
+    <div class="sub-hero" style="background: linear-gradient(rgba(75, 0, 130, 0.7), rgba(75, 0, 130, 0.7)), url('assets/iskcon_temple_hall.png'); background-size: cover; background-position: center;">
+        <div class="container">
+            <h1>Educational Courses</h1>
+            <p>Deepen your spiritual knowledge and practice with our authentic Vedic programs.</p>
+        </div>
+    </div>
+
+    <main class="container">
+        <div class="courses-grid">
+            <div class="course-card">
+                <img src="assets/course_disciple_1773167608986.png" alt="Disciple Course">
+                <div class="course-card-content">
+                    <span class="course-type">Foundational</span>
+                    <h3>ISKCON Disciple Course</h3>
+                    <p>Essential guidance for those seeking shelter and initiation within the Guru-parampara system.</p>
+                    <div class="course-footer">
+                        <a href="#" class="enroll-btn">Learn More →</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="course-card">
+                <img src="assets/course_etiquette_1773167633506.png" alt="Vaishnava Etiquette">
+                <div class="course-card-content">
+                    <span class="course-type">Culture</span>
+                    <h3>Vaishnava Etiquette Course</h3>
+                    <p>Learning the art of devotional behavior and respectful interactions in the community.</p>
+                    <div class="course-footer">
+                        <a href="#" class="enroll-btn">Learn More →</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="course-card">
+                <img src="assets/course_bhakti_pravesh_1773167650938.png" alt="Bhakti Pravesh">
+                <div class="course-card-content">
+                    <span class="course-type">Beginner</span>
+                    <h3>Bhakti Pravesh Course</h3>
+                    <p>A comprehensive introduction to the fundamental practices and philosophy of Krishna Consciousness.</p>
+                    <div class="course-footer">
+                        <a href="#" class="enroll-btn">Learn More →</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="course-card">
+                <img src="assets/course_discover_yourself_1773167670077.png" alt="Discover Yourself">
+                <div class="course-card-content">
+                    <span class="course-type">General</span>
+                    <h3>Discover Yourself Course</h3>
+                    <p>A logic-based approach to understanding the science of the soul and the laws of nature.</p>
+                    <div class="course-footer">
+                        <a href="#" class="enroll-btn">Learn More →</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="course-card">
+                <img src="assets/course_bhakti_shastri_1773167695233.png" alt="Bhakti Shastri">
+                <div class="course-card-content">
+                    <span class="course-type">Intermediate</span>
+                    <h3>Bhakti Shastri Course</h3>
+                    <p>Systematic study of Bhagavad-gita, Nectar of Devotion, Upadesamrta, and Isopanisad.</p>
+                    <div class="course-footer">
+                        <a href="#" class="enroll-btn">Learn More →</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="course-card">
+                <img src="assets/course_bhakti_shastri_1773167695233.png" alt="Bhakti Vaibhav">
+                <div class="course-card-content">
+                    <span class="course-type">Advanced</span>
+                    <h3>Bhakti Vaibhav Course</h3>
+                    <p>Deep-dive study focused on the systematic analysis of the Srimad-Bhagavatam Cantos 1-6.</p>
+                    <div class="course-footer">
+                        <a href="#" class="enroll-btn">Learn More →</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="course-card">
+                <img src="assets/iskcon_event_ram_navami.png" alt="Deity Dressing">
+                <div class="course-card-content">
+                    <span class="course-type">Artistic (Temple/Home)</span>
+                    <h3>Deity Dressing Course</h3>
+                    <p>A hands-on workshop learning the techniques and meditations of dressing the Lord beautifully.</p>
+                    <div class="course-footer">
+                        <a href="#" class="enroll-btn">Learn More →</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="course-card">
+                <img src="assets/iskcon_event_chandan_yatra.png" alt="Deity Worship">
+                <div class="course-card-content">
+                    <span class="course-type">Ritual (Temple/Home)</span>
+                    <h3>Deity Worship Course</h3>
+                    <p>Understanding the standards, purity, and heart behind sacred archana-vidhi in home and temple.</p>
+                    <div class="course-footer">
+                        <a href="#" class="enroll-btn">Learn More →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>About Us</h4>
+                    <p>ISKCON Dhule is a center for spiritual learning and devotion, bringing the message of pure love for God through Vedic wisdom and selfless service to the community.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="temple-timings.html">Timings</a></li>
+                        <li><a href="programs.html">Programs</a></li>
+                        <li><a href="media-gallery.html">Media</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li>Hare Krishna Land, Dhule</li>
+                        <li>Phone: +91 8483971203</li>
+                        <li>Email: info@iskcondhule.com</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>

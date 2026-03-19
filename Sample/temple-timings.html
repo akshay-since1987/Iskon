@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temple Timings - ISKCON Dhule</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Outfit:wght@700&display=swap" rel="stylesheet">
+    <style>
+        .sub-hero {
+            height: 40vh;
+            background: linear-gradient(rgba(75, 0, 130, 0.8), rgba(75, 0, 130, 0.8)), url('assets/iskcon_temple_hall.png');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+
+        .timing-table-container {
+            margin: 50px 0;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            box-shadow: var(--shadow);
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: 20px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        th {
+            background-color: var(--primary-purple);
+            color: white;
+            font-family: 'Outfit', sans-serif;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:hover {
+            background-color: #fcfcfc;
+        }
+
+        .timing-badge {
+            background: #f1f8ff;
+            color: var(--primary-purple);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.85rem;
+        }
+
+        .timing-section-header {
+            margin: 40px 0 20px;
+            color: var(--primary-purple);
+            border-left: 5px solid var(--primary-gold);
+            padding-left: 15px;
+        }
+        
+    </style>
+</head>
+<body>
+
+    <header class="nav-header">
+        <div class="logo-container">
+            <img src="assets/white.png" alt="ISKCON Dhule Logo" class="logo-white">
+            <img src="assets/black.png" alt="ISKCON Dhule Logo" class="logo-black">
+            <div>
+                ISKCON Dhule<br>
+                <small>Society for Krishna Consciousness</small>
+            </div>
+        </div>
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="temple-timings.html" class="active">Temple</a>
+            <a href="courses.html">Courses</a>
+            <a href="programs.html">Programs</a>
+            <a href="media-gallery.html">Media</a>
+        </nav>
+        <div class="header-actions">
+            <button class="btn btn-gold login-trigger">Login</button>
+        </div>
+    </header>
+
+    <div class="sub-hero">
+        <div class="container">
+            <h1>Temple Timings</h1>
+            <p>Experience the divine presence according to the daily schedule.</p>
+        </div>
+    </div>
+
+    <main class="container">
+        <h2 class="timing-section-header">Arati Schedule</h2>
+        <div class="timing-table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Ritual</th>
+                        <th>Time</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Mangala Arati</td>
+                        <td><span class="timing-badge">04:30 AM</span></td>
+                        <td>The first arati of the day, waking up the Lord with blissful prayers.</td>
+                    </tr>
+                    <tr>
+                        <td>Tulsi Arati</td>
+                        <td><span class="timing-badge">05:00 AM</span></td>
+                        <td>Worship of the holy Tulsi plant for spiritual growth.</td>
+                    </tr>
+                    <tr>
+                        <td>Greeting of Deities</td>
+                        <td><span class="timing-badge">07:15 AM</span></td>
+                        <td>A beautiful darsana accompanied by the singing of Govindam prayers.</td>
+                    </tr>
+                    <tr>
+                        <td>Srila Prabhupada Guru Puja</td>
+                        <td><span class="timing-badge">07:30 AM</span></td>
+                        <td>Paying homage to the founder-acharya of ISKCON.</td>
+                    </tr>
+                    <tr>
+                        <td>Srimad Bhagavatam Class</td>
+                        <td><span class="timing-badge">08:00 AM</span></td>
+                        <td>Daily spiritual discourse from the Srimad Bhagavatam.</td>
+                    </tr>
+                    <tr>
+                        <td>Dhupa Arati</td>
+                        <td><span class="timing-badge">08:30 AM</span></td>
+                        <td>Incense offering accompanied by kirtan.</td>
+                    </tr>
+                    <tr>
+                        <td>Raj Bhoga Arati</td>
+                        <td><span class="timing-badge">12:30 PM</span></td>
+                        <td>The major arati followed by a grand offering of food.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h2 class="timing-section-header">Evening Schedule</h2>
+        <div class="timing-table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Ritual</th>
+                        <th>Time</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Dhupa Arati</td>
+                        <td><span class="timing-badge">04:15 PM</span></td>
+                        <td>Opening darsana in the evening.</td>
+                    </tr>
+                    <tr>
+                        <td>Tulsi Arati</td>
+                        <td><span class="timing-badge">06:45 PM</span></td>
+                        <td>Evening worship of the Tulsi plant.</td>
+                    </tr>
+                    <tr>
+                        <td>Sandhya Arati (Gaura Arati)</td>
+                        <td><span class="timing-badge">07:00 PM</span></td>
+                        <td>The grand evening arati with enthusiastic congregational kirtan.</td>
+                    </tr>
+                    <tr>
+                        <td>Bhagavad Gita Class</td>
+                        <td><span class="timing-badge">08:00 PM</span></td>
+                        <td>Evening spiritual lecture on the teachings of Krishna.</td>
+                    </tr>
+                    <tr>
+                        <td>Shayana Arati</td>
+                        <td><span class="timing-badge">08:30 PM</span></td>
+                        <td>The final arati before the deities retire for the night.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="glass-card" style="margin: 50px 0;">
+            <h3>Important Note:</h3>
+            <p>The temple hall remains closed for the deities' rest from 1:00 PM to 4:15 PM and after 9:00 PM. Please plan your visit accordingly to ensure you have a peaceful darsana.</p>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>About Us</h4>
+                    <p>ISKCON Dhule is a center for spiritual learning and devotion, bringing the message of pure love for God through Vedic wisdom and selfless service to the community.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="temple-timings.html">Timings</a></li>
+                        <li><a href="programs.html">Programs</a></li>
+                        <li><a href="media-gallery.html">Media</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li>Hare Krishna Land, Dhule</li>
+                        <li>Phone: +91 8483971203</li>
+                        <li>Email: info@iskcondhule.com</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>

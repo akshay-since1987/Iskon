@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regular Programs - ISKCON Dhule</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Outfit:wght@700&display=swap" rel="stylesheet">
+    <style>
+        .programs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 60px 0;
+        }
+
+        .program-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 1px solid #f0f0f0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .program-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+
+        .program-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .program-card-content {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .program-card h3 {
+            color: var(--primary-purple);
+            margin-bottom: 12px;
+            font-size: 1.4rem;
+        }
+
+        .program-card p {
+            color: var(--text-light);
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .program-tag {
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--primary-gold);
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .program-footer {
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+        }
+
+        .program-schedule {
+            color: var(--primary-purple);
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="nav-header">
+        <div class="logo-container">
+            <img src="assets/white.png" alt="ISKCON Dhule Logo" class="logo-white">
+            <img src="assets/black.png" alt="ISKCON Dhule Logo" class="logo-black">
+            <div>
+                ISKCON Dhule<br>
+                <small>Society for Krishna Consciousness</small>
+            </div>
+        </div>
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="temple-timings.html">Temple</a>
+            <a href="courses.html">Courses</a>
+            <a href="programs.html" class="active">Programs</a>
+            <a href="media-gallery.html">Media</a>
+        </nav>
+        <div class="header-actions">
+            <button class="btn btn-gold login-trigger">Login</button>
+        </div>
+    </header>
+
+    <div class="sub-hero" style="background: linear-gradient(rgba(75, 0, 130, 0.7), rgba(75, 0, 130, 0.7)), url('assets/iskcon_festival_crowd_kirtan.png'); background-size: cover; background-position: center;">
+        <div class="container">
+            <h1>Regular Programs</h1>
+            <p>Join our spiritually uplifting gatherings and educational forums held regularly at ISKCON Dhule.</p>
+        </div>
+    </div>
+
+    <main class="container">
+        <div class="programs-grid">
+            <!-- 1) Regular Satsang -->
+            <div class="program-card">
+                <img src="assets/iskcon_event_ekadasi.png" alt="Regular Satsang">
+                <div class="program-card-content">
+                    <span class="program-tag">Spiritual Gathering</span>
+                    <h3>Regular Satsang</h3>
+                    <p>Experience the bliss of congregational chanting (Kirtan), profound Bhagavad Gita discourses, and soulful association of devotees.</p>
+                    <div class="program-footer">
+                        <div class="program-schedule">
+                            <span>📅</span> Every Saturday & Sunday
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2) Iskcon youth forum -->
+            <div class="program-card">
+                <img src="assets/course_bhakti_pravesh_1773167650938.png" alt="Youth Forum">
+                <div class="program-card-content">
+                    <span class="program-tag">Youth</span>
+                    <h3>ISKCON Youth Forum (IYF)</h3>
+                    <p>Directing the vibrant energy of youth toward character building and leadership through the lens of timeless Vedic wisdom.</p>
+                    <div class="program-footer">
+                        <div class="program-schedule">
+                            <span>📅</span> Weekly Sessions
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3) Iskcon Girls forum -->
+            <div class="program-card">
+                <img src="assets/course_etiquette_1773167633506.png" alt="Girls Forum">
+                <div class="program-card-content">
+                    <span class="program-tag">Youth</span>
+                    <h3>ISKCON Girls Forum (IGF)</h3>
+                    <p>Empowering young women with spiritual knowledge, traditional values, and artistic skills in a supportive, sisterly environment.</p>
+                    <div class="program-footer">
+                        <div class="program-schedule">
+                            <span>📅</span> Weekly Sessions
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4) Sunday School -->
+            <div class="program-card">
+                <img src="assets/iskcon_gau_seva.png" alt="Sunday School">
+                <div class="program-card-content">
+                    <span class="program-tag">Children</span>
+                    <h3>Sunday School</h3>
+                    <p>Nurturing the next generation with values through storytelling, shloka recitation, games, and spiritual activities.</p>
+                    <div class="program-footer">
+                        <div class="program-schedule">
+                            <span>📅</span> Every Sunday | 10 AM - 12 PM
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5) Discover your self -->
+            <div class="program-card">
+                <img src="assets/course_discover_yourself_1773167670077.png" alt="Discover Your Self">
+                <div class="program-card-content">
+                    <span class="program-tag">Gita Course</span>
+                    <h3>Discover Your Self</h3>
+                    <p>A life-transforming systematic study of the Bhagavad Gita tailored for modern thinkers and professionals.</p>
+                    <div class="program-footer">
+                        <div class="program-schedule">
+                            <span>📅</span> Once in Four Months
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>About Us</h4>
+                    <p>ISKCON Dhule is a center for spiritual learning and devotion, bringing the message of pure love for God through Vedic wisdom and selfless service to the community.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="temple-timings.html">Timings</a></li>
+                        <li><a href="programs.html">Programs</a></li>
+                        <li><a href="media-gallery.html">Media</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li>Hare Krishna Land, Dhule</li>
+                        <li>Phone: +91 8483971203</li>
+                        <li>Email: info@iskcondhule.com</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>

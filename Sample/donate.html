@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate Online - ISKCON Dhule</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Outfit:wght@700&display=swap" rel="stylesheet">
+    <style>
+        .donation-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
+        }
+
+        .donation-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            border: 1px solid #f0f0f0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .donation-img {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .donation-content {
+            padding: 30px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .donation-content h3 {
+            color: var(--primary-purple);
+            margin-bottom: 10px;
+        }
+
+        .donation-content p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .donation-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+        }
+
+        .price-select {
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        .cart-sidebar {
+            background: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 100px;
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .cart-total {
+            margin-top: 20px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            display: flex;
+            justify-content: space-between;
+            color: var(--primary-purple);
+        }
+
+        /* Shared layout from timings */
+        .sub-hero {
+            height: 40vh;
+            background: linear-gradient(rgba(75, 0, 130, 0.8), rgba(75, 0, 130, 0.8)), url('assets/iskcon_anna_dan_seva.png');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+
+        .layout-with-sidebar {
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            gap: 40px;
+        }
+
+        @media (max-width: 1000px) {
+            .layout-with-sidebar {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+
+    <header class="nav-header">
+        <div class="logo-container">
+            <img src="assets/logo.jpg" alt="ISKCON Dhule Logo">
+            <div>
+                ISKCON Dhule<br>
+                <small>Society for Krishna Consciousness</small>
+            </div>
+        </div>
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="temple-timings.html">Temple</a>
+            <a href="courses.html">Courses</a>
+            <a href="media-gallery.html">Media</a>
+            <a href="donate.html" class="active">Donate</a>
+            <a href="facilities.html">More</a>
+        </nav>
+        <div class="header-actions">
+            <button class="btn btn-gold login-trigger">Login</button>
+        </div>
+    </header>
+
+    <div class="sub-hero">
+        <div class="container">
+            <h1>Online Donations (Seva)</h1>
+            <p>Contribute towards the various activities and spiritual services of the temple.</p>
+        </div>
+    </div>
+
+    <main class="container">
+        <div class="layout-with-sidebar">
+            <div class="donation-list">
+                <h2 class="timing-section-header">Support Our Missions</h2>
+                
+                <div class="donation-grid">
+                    <div class="donation-card">
+                        <div class="donation-img" style="background-image: url('assets/iskcon_anna_dan_seva.png');"></div>
+                        <div class="donation-content">
+                            <h3>Anna Daan (Food for Life)</h3>
+                            <p>Support our mission to provide hot, nutritious, sanctified meals (Prasadam) to the needy in Dhule.</p>
+                            <div class="donation-actions">
+                                <select class="price-select" id="price-annadaan">
+                                    <option value="500">₹ 500 (10 meals)</option>
+                                    <option value="1000">₹ 1000 (20 meals)</option>
+                                    <option value="5000">₹ 5000 (100 meals)</option>
+                                </select>
+                                <button class="btn btn-primary" onclick="addToCart('Anna Daan', document.getElementById('price-annadaan').value)">Add Seva</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="donation-card">
+                        <div class="donation-img" style="background-image: url('assets/iskcon_gau_seva.png');"></div>
+                        <div class="donation-content">
+                            <h3>Gau Seva (Cow Protection)</h3>
+                            <p>Contribute to the maintenance and care of cows in our temple goshala, providing them fodder and medical care.</p>
+                            <div class="donation-actions">
+                                <select class="price-select" id="price-gauseva">
+                                    <option value="1100">₹ 1100 (Adopt 1 day)</option>
+                                    <option value="5100">₹ 5100 (Adopt 1 week)</option>
+                                    <option value="21000">₹ 21000 (1 Month Care)</option>
+                                </select>
+                                <button class="btn btn-primary" onclick="addToCart('Gau Seva', document.getElementById('price-gauseva').value)">Add Seva</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="donation-card">
+                        <div class="donation-img" style="background-image: url('assets/iskcon_temple_hall.png');"></div>
+                        <div class="donation-content">
+                            <h3>General Maintenance</h3>
+                            <p>Support the ongoing maintenance, utilities, and upkeep of the magnificent ISKCON Dhule.</p>
+                            <div class="donation-actions">
+                                <select class="price-select" id="price-general">
+                                    <option value="251">₹ 251</option>
+                                    <option value="501">₹ 501</option>
+                                    <option value="1001">₹ 1001</option>
+                                </select>
+                                <button class="btn btn-primary" onclick="addToCart('General Seva', document.getElementById('price-general').value)">Add Seva</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <aside>
+                <div class="cart-sidebar">
+                    <h3>Your Seva Cart</h3>
+                    <div id="cart-items">
+                        <p style="text-align: center; color: #999; margin: 20px 0;">Your cart is empty</p>
+                    </div>
+                    <div class="cart-total" id="cart-total-container" style="display: none;">
+                        <span>Total:</span>
+                        <span id="cart-total-value">₹ 0</span>
+                    </div>
+                    <button id="checkout-btn" class="btn btn-gold" style="width: 100%; margin-top: 20px; display: none;" onclick="alert('Redirecting to secure payment gateway...')">Proceed to Pay</button>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>About Us</h4>
+                    <p>ISKCON Dhule is a center for spiritual learning and devotion, bringing the message of pure love for God through Vedic wisdom and selfless service to the community.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="temple-timings.html">Timings</a></li>
+                        <li><a href="programs.html">Programs</a></li>
+                        <li><a href="media-gallery.html">Media</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li>Hare Krishna Land, Dhule</li>
+                        <li>Phone: +91 8483971203</li>
+                        <li>Email: info@iskcondhule.com</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script>
+        let cart = [];
+        
+        function addToCart(seva, price) {
+            cart.push({ seva, price: parseInt(price) });
+            updateCartUI();
+        }
+
+        function updateCartUI() {
+            const container = document.getElementById('cart-items');
+            const totalVal = document.getElementById('cart-total-value');
+            const totalContainer = document.getElementById('cart-total-container');
+            const checkoutBtn = document.getElementById('checkout-btn');
+            
+            if (cart.length === 0) {
+                container.innerHTML = '<p style="text-align: center; color: #999; margin: 20px 0;">Your cart is empty</p>';
+                totalContainer.style.display = 'none';
+                checkoutBtn.style.display = 'none';
+                return;
+            }
+
+            container.innerHTML = '';
+            let total = 0;
+            cart.forEach((item, index) => {
+                total += item.price;
+                const div = document.createElement('div');
+                div.className = 'cart-item';
+                div.innerHTML = `<span>${item.seva}</span> <strong>₹ ${item.price}</strong>`;
+                container.appendChild(div);
+            });
+
+            totalVal.textContent = `₹ ${total}`;
+            totalContainer.style.display = 'flex';
+            checkoutBtn.style.display = 'block';
+        }
+    </script>
+</body>
+</html>
