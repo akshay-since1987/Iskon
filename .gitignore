@@ -1,79 +1,44 @@
-# Python
-__pycache__/
-*.py[cod]
-*$py.class
-*.so
-*.egg
-*.egg-info/
-dist/
-build/
-.Python
-venv/
-env/
-ENV/
-.venv
+# Visual Studio and editors
+.vs/
+.vscode/
+.idea/
+*.code-workspace
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
 
-# Django
-*.log
-local_settings.py
-db.sqlite3
-db.sqlite3-journal
-media/
-staticfiles/
+# Build outputs
+**/[Bb]in/
+**/[Oo]bj/
+**/[Dd]ebug/
+**/[Rr]elease/
+**/[Ll]og/
+**/[Ll]ogs/
+artifacts/
+publish/
 
-# ML Models
-*.pkl
-*.h5
-*.joblib
-*.model
-/ml_models/trained_models/
+# Package outputs
+**/node_modules/
+**/dist/
+packages/
+*.nupkg
+*.snupkg
 
-# Environment variables
+# Local environment and secrets
 .env
 .env.local
 .env.*.local
+src/**/appsettings.json
+appsettings.Development.json
+appsettings.Local.json
+appsettings.*.local.json
+!src/**/appsettings.example.json
 
-# IDE
-.vscode/
-.idea/
+# OS and temporary files
+.DS_Store
+Thumbs.db
 *.swp
 *.swo
 *~
-.DS_Store
-
-# Node
-node_modules/
-npm-debug.log
-yarn-error.log
-/frontend/build
-/frontend/.env
-
-# Database
-*.mysql
-*.db
-
-# Jupyter Notebook
-.ipynb_checkpoints
-
-# pytest
-.pytest_cache/
-.coverage
-htmlcov/
-
-# MyPy
-.mypy_cache/
-.dmypy.json
-dmypy.json
-
-# Data files
-/data/raw/
-/data/processed/
-*.csv
-*.xlsx
-*.json
-!requirements.txt
-!package.json
-
-# Logs
-logs/
-*.log
