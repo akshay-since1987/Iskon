@@ -2,8 +2,10 @@ using IskconWeb.API.DTOs;
 using IskconWeb.Core.Data;
 using IskconWeb.Core.Models;
 using IskconWeb.Core.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.OutputCaching;
 using Microsoft.EntityFrameworkCore;
 
 namespace IskconWeb.API.Controllers;
@@ -18,6 +20,7 @@ public class TemplesController(
     /// Get all temples
     /// </summary>
     [HttpGet]
+    [OutputCache(PolicyName = "PublicContent")]
     public async Task<ActionResult<IEnumerable<TempleDto>>> GetTemples()
     {
         try
@@ -49,6 +52,7 @@ public class TemplesController(
     /// Get temple by ID
     /// </summary>
     [HttpGet("{id}")]
+    [OutputCache(PolicyName = "PublicContent")]
     public async Task<ActionResult<TempleDto>> GetTemple(Guid id)
     {
         try
@@ -83,6 +87,7 @@ public class TemplesController(
     /// Get temple with all related data (events, courses, timings)
     /// </summary>
     [HttpGet("{id}/details")]
+    [OutputCache(PolicyName = "ShortLived")]
     public async Task<ActionResult<dynamic>> GetTempleDetails(Guid id)
     {
         try
@@ -170,6 +175,7 @@ public class EventsController(
     /// Get all published events for a temple
     /// </summary>
     [HttpGet("temple/{templeId}")]
+    [OutputCache(PolicyName = "ShortLived")]
     public async Task<ActionResult<IEnumerable<EventDto>>> GetEventsByTemple(Guid templeId)
     {
         try
@@ -194,6 +200,7 @@ public class EventsController(
     /// Get event by ID
     /// </summary>
     [HttpGet("{id}")]
+    [OutputCache(PolicyName = "ShortLived")]
     public async Task<ActionResult<EventDto>> GetEvent(Guid id)
     {
         try
@@ -218,6 +225,7 @@ public class EventsController(
     /// Create a new event (admin only)
     /// </summary>
     [HttpPost]
+    [Authorize]
     public async Task<ActionResult<ApiResponse<EventDto>>> CreateEvent(CreateEventDto dto)
     {
         try
@@ -263,6 +271,7 @@ public class EventsController(
     /// Update event
     /// </summary>
     [HttpPut("{id}")]
+    [Authorize]
     public async Task<ActionResult<ApiResponse<EventDto>>> UpdateEvent(Guid id, UpdateEventDto dto)
     {
         try
@@ -303,6 +312,7 @@ public class EventsController(
     /// Publish event to public website
     /// </summary>
     [HttpPost("{id}/publish")]
+    [Authorize]
     public async Task<ActionResult<ApiResponse>> PublishEvent(Guid id)
     {
         try
@@ -335,6 +345,7 @@ public class EventsController(
     /// Delete event
     /// </summary>
     [HttpDelete("{id}")]
+    [Authorize]
     public async Task<ActionResult<ApiResponse>> DeleteEvent(Guid id)
     {
         try
@@ -391,6 +402,7 @@ public class CoursesController(
     /// Get all published courses for a temple
     /// </summary>
     [HttpGet("temple/{templeId}")]
+    [OutputCache(PolicyName = "PublicContent")]
     public async Task<ActionResult<IEnumerable<CourseDto>>> GetCoursesByTemple(Guid templeId)
     {
         try
@@ -415,6 +427,7 @@ public class CoursesController(
     /// Get course by ID
     /// </summary>
     [HttpGet("{id}")]
+    [OutputCache(PolicyName = "PublicContent")]
     public async Task<ActionResult<CourseDto>> GetCourse(Guid id)
     {
         try
@@ -439,6 +452,7 @@ public class CoursesController(
     /// Create a new course
     /// </summary>
     [HttpPost]
+    [Authorize]
     public async Task<ActionResult<ApiResponse<CourseDto>>> CreateCourse(CreateCourseDto dto)
     {
         try
@@ -485,6 +499,7 @@ public class CoursesController(
     /// Update course
     /// </summary>
     [HttpPut("{id}")]
+    [Authorize]
     public async Task<ActionResult<ApiResponse<CourseDto>>> UpdateCourse(Guid id, UpdateCourseDto dto)
     {
         try
@@ -526,6 +541,7 @@ public class CoursesController(
     /// Publish course
     /// </summary>
     [HttpPost("{id}/publish")]
+    [Authorize]
     public async Task<ActionResult<ApiResponse>> PublishCourse(Guid id)
     {
         try
@@ -558,6 +574,7 @@ public class CoursesController(
     /// Delete course
     /// </summary>
     [HttpDelete("{id}")]
+    [Authorize]
     public async Task<ActionResult<ApiResponse>> DeleteCourse(Guid id)
     {
         try

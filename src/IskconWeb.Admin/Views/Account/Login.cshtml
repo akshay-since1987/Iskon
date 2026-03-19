@@ -1,0 +1,59 @@
+@model IskconWeb.Admin.Controllers.LoginViewModel
+@{
+    ViewData["Title"] = "Admin Login";
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ISKCON Admin – Login</title>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: system-ui, sans-serif; background: #f0f2f5; display: flex; align-items: center; justify-content: center; min-height: 100vh; }
+        .card { background: #fff; border-radius: 8px; box-shadow: 0 2px 16px rgba(0,0,0,.12); padding: 2.5rem 2rem; width: 100%; max-width: 380px; }
+        h1 { font-size: 1.4rem; color: #1a1a2e; margin-bottom: 1.5rem; text-align: center; }
+        label { display: block; font-size: .875rem; font-weight: 600; margin-bottom: .3rem; color: #444; }
+        input[type=email], input[type=password] { width: 100%; padding: .6rem .75rem; border: 1px solid #ccc; border-radius: 5px; font-size: 1rem; margin-bottom: 1rem; transition: border-color .2s; }
+        input:focus { outline: none; border-color: #e65c00; }
+        .remember { display: flex; align-items: center; gap: .5rem; font-size: .875rem; margin-bottom: 1.25rem; }
+        button[type=submit] { width: 100%; padding: .7rem; background: #e65c00; color: #fff; border: none; border-radius: 5px; font-size: 1rem; font-weight: 600; cursor: pointer; transition: background .2s; }
+        button[type=submit]:hover { background: #c44f00; }
+        .validation-summary-errors { background: #fee; border: 1px solid #f99; border-radius: 5px; padding: .75rem 1rem; margin-bottom: 1rem; font-size: .875rem; color: #c00; }
+        .validation-summary-errors ul { padding-left: 1rem; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>🕉 ISKCON Admin</h1>
+
+        <div asp-validation-summary="All" class="validation-summary-errors"></div>
+
+        <form asp-action="Login" asp-controller="Account" method="post">
+            @Html.AntiForgeryToken()
+
+            @if (!string.IsNullOrEmpty(ViewBag.ReturnUrl as string))
+            {
+                <input type="hidden" name="returnUrl" value="@ViewBag.ReturnUrl" />
+            }
+
+            <label asp-for="Email">Email</label>
+            <input asp-for="Email" type="email" autocomplete="username" autofocus />
+            <span asp-validation-for="Email"></span>
+
+            <label asp-for="Password">Password</label>
+            <input asp-for="Password" type="password" autocomplete="current-password" />
+            <span asp-validation-for="Password"></span>
+
+            <div class="remember">
+                <input asp-for="RememberMe" type="checkbox" id="RememberMe" />
+                <label for="RememberMe" style="font-weight:normal;">Remember me</label>
+            </div>
+
+            <button type="submit">Sign in</button>
+        </form>
+    </div>
+    <partial name="_ValidationScriptsPartial" />
+</body>
+</html>

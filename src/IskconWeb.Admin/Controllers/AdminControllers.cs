@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace IskconWeb.Admin.Controllers;
 
-public class DashboardController : Controller
+public class DashboardController : AdminBaseController
 {
     private readonly IHttpClientFactory _httpClientFactory;
     private readonly ILogger<DashboardController> _logger;
@@ -19,7 +19,7 @@ public class DashboardController : Controller
     {
         try
         {
-            var client = _httpClientFactory.CreateClient("ApiClient");
+            var client = CreateAuthorizedClient(_httpClientFactory);
             
             // Get temples count
             var templesResponse = await client.GetAsync("/api/temples");
@@ -44,7 +44,7 @@ public class DashboardController : Controller
     }
 }
 
-public class EventsAdminController : Controller
+public class EventsAdminController : AdminBaseController
 {
     private readonly IHttpClientFactory _httpClientFactory;
     private readonly ILogger<EventsAdminController> _logger;
@@ -70,7 +70,7 @@ public class EventsAdminController : Controller
                 templeId = Guid.Parse(defaultTempleId ?? "11111111-1111-1111-1111-111111111111");
             }
 
-            var client = _httpClientFactory.CreateClient("ApiClient");
+            var client = CreateAuthorizedClient(_httpClientFactory);
             var response = await client.GetAsync($"/api/events/temple/{templeId}");
 
             if (response.IsSuccessStatusCode)
@@ -100,7 +100,7 @@ public class EventsAdminController : Controller
     {
         try
         {
-            var client = _httpClientFactory.CreateClient("ApiClient");
+            var client = CreateAuthorizedClient(_httpClientFactory);
             var json = System.Text.Json.JsonSerializer.Serialize(eventData);
             var content = new StringContent(json, System.Text.Encoding.UTF8, "application/json");
 
@@ -127,7 +127,7 @@ public class EventsAdminController : Controller
     {
         try
         {
-            var client = _httpClientFactory.CreateClient("ApiClient");
+            var client = CreateAuthorizedClient(_httpClientFactory);
             var response = await client.GetAsync($"/api/events/{id}");
 
             if (response.IsSuccessStatusCode)
@@ -151,7 +151,7 @@ public class EventsAdminController : Controller
     {
         try
         {
-            var client = _httpClientFactory.CreateClient("ApiClient");
+            var client = CreateAuthorizedClient(_httpClientFactory);
             var json = System.Text.Json.JsonSerializer.Serialize(eventData);
             var content = new StringContent(json, System.Text.Encoding.UTF8, "application/json");
 
@@ -179,7 +179,7 @@ public class EventsAdminController : Controller
     {
         try
         {
-            var client = _httpClientFactory.CreateClient("ApiClient");
+            var client = CreateAuthorizedClient(_httpClientFactory);
             var response = await client.PostAsync($"/api/events/{id}/publish", null);
 
             if (response.IsSuccessStatusCode)
@@ -204,7 +204,7 @@ public class EventsAdminController : Controller
     {
         try
         {
-            var client = _httpClientFactory.CreateClient("ApiClient");
+            var client = CreateAuthorizedClient(_httpClientFactory);
             var response = await client.DeleteAsync($"/api/events/{id}");
 
             if (response.IsSuccessStatusCode)
@@ -225,7 +225,7 @@ public class EventsAdminController : Controller
     }
 }
 
-public class CoursesAdminController : Controller
+public class CoursesAdminController : AdminBaseController
 {
     private readonly IHttpClientFactory _httpClientFactory;
     private readonly ILogger<CoursesAdminController> _logger;
@@ -251,7 +251,7 @@ public class CoursesAdminController : Controller
                 templeId = Guid.Parse(defaultTempleId ?? "11111111-1111-1111-1111-111111111111");
             }
 
-            var client = _httpClientFactory.CreateClient("ApiClient");
+            var client = CreateAuthorizedClient(_httpClientFactory);
             var response = await client.GetAsync($"/api/courses/temple/{templeId}");
 
             if (response.IsSuccessStatusCode)
@@ -281,7 +281,7 @@ public class CoursesAdminController : Controller
     {
         try
         {
-            var client = _httpClientFactory.CreateClient("ApiClient");
+            var client = CreateAuthorizedClient(_httpClientFactory);
             var json = System.Text.Json.JsonSerializer.Serialize(courseData);
             var content = new StringContent(json, System.Text.Encoding.UTF8, "application/json");
 
@@ -309,7 +309,7 @@ public class CoursesAdminController : Controller
     {
         try
         {
-            var client = _httpClientFactory.CreateClient("ApiClient");
+            var client = CreateAuthorizedClient(_httpClientFactory);
             var response = await client.PostAsync($"/api/courses/{id}/publish", null);
 
             if (response.IsSuccessStatusCode)
