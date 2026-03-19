@@ -47,7 +47,7 @@ IskconWeb.sln
 - **Master DB (Iskcon_Master):** Complete authoring database (drafts + published)
 - **Web DB (Iskcon_Web):** Published content only, optimized for read-heavy public site
 - **Automatic Sync:** ContentSyncService publishes Master → Web on publish action
-- **Credentials:** parth\SQLEXPRESS, sa/server@123
+- **Instance/Auth:** .\SQLEXPRESS with Windows Authentication
 
 ### Security
 - ASP.NET Identity with PBKDF2 password hashing
@@ -65,7 +65,7 @@ IskconWeb.sln
 
 ### Prerequisites
 - .NET 8 SDK
-- SQL Server (parth\SQLEXPRESS)
+- SQL Server (.\SQLEXPRESS, Windows Authentication)
 - Visual Studio 2022 or VS Code
 
 ### Build & Run

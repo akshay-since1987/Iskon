@@ -125,15 +125,15 @@ A **multi-tenant web portal** where visitors start at a common landing page, sel
 
 ### **Database Configuration**
 
-**Instance:** `parth\SQLEXPRESS`
-**Credentials:** User: `sa` | Password: `server@123`
+**Instance:** `.\SQLEXPRESS`
+**Authentication:** Windows Authentication (`Trusted_Connection=true`)
 
 #### **Iskcon-Master Database**
 **Purpose:** Content authoring, drafting, and administration
 - **Database Name:** `Iskon_Master`
 - **Connection String:**
   ```
-  Server=parth\SQLEXPRESS;Database=Iskon_Master;User Id=sa;Password=server@123;Encrypt=false;TrustServerCertificate=true;
+   Server=.\SQLEXPRESS;Database=Iskon_Master;Trusted_Connection=true;Encrypt=false;TrustServerCertificate=True;
   ```
 - **Users:** Admin staff, content editors
 - **Access Level:** Full CRUD operations
@@ -155,7 +155,7 @@ A **multi-tenant web portal** where visitors start at a common landing page, sel
 - **Database Name:** `Iskon_Web`
 - **Connection String:**
   ```
-  Server=parth\SQLEXPRESS;Database=Iskon_Web;User Id=sa;Password=server@123;Encrypt=false;TrustServerCertificate=true;
+   Server=.\SQLEXPRESS;Database=Iskon_Web;Trusted_Connection=true;Encrypt=false;TrustServerCertificate=True;
   ```
 - **Users:** Website visitors, mobile app clients
 - **Access Level:** Read-only (SELECT queries only)
